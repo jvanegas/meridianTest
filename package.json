@@ -1,0 +1,45 @@
+{
+  "name": "meridiantest",
+  "version": "1.0.0",
+  "description": "",
+  "engines": {
+    "node": ">=16"
+  },
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "./node_modules/.bin/nodemon index.js",
+    "start": "node index.js",
+    "install:docker": "sh ./docker/install.sh",
+    "uninstall:docker": "sh ./docker/uninstall.sh",
+    "prettier": "prettier --write '*.js'",
+    "lint": "eslint --ext .js",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jvanegas/meridianTest.git"
+  },
+  "keywords": [],
+  "author": "Juan Camilo Vanegas Serna <juancamilo.vs206@gmail.com>",
+  "license": "ISC",
+  "homepage": "https://github.com/jvanegas/meridianTest#readme",
+  "dependencies": {
+    "fastify": "^4.12.0",
+    "fastify-plugin": "^4.5.0",
+    "pg": "^8.9.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.28.0",
+    "sequelize-cli": "^6.6.0"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.3",
+    "eslint": "^8.33.0",
+    "eslint-config-prettier": "^8.6.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.1",
+    "nodemon": "^2.0.20",
+    "prettier": "^2.8.4"
+  }
+}
