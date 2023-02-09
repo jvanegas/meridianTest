@@ -15,7 +15,11 @@
     "uninstall:docker": "sh ./docker/uninstall.sh",
     "prettier": "prettier --write '*.js'",
     "lint": "eslint --ext .js",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "db:migrate": "./node_modules/.bin/sequelize-cli db:migrate",
+    "db:migrate:undo:all": "./node_modules/.bin/sequelize-cli db:migrate:undo:all",
+    "db:seed:all": "./node_modules/.bin/sequelize-cli db:seed:all",
+    "db:seed:undo:all": "./node_modules/.bin/sequelize-cli db:seed:undo:all"
   },
   "repository": {
     "type": "git",
