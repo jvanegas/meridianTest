@@ -1,4 +1,4 @@
-const { DataTypes } = require("sequelize")
+const { DataTypes, Sequelize } = require("sequelize")
 
 const tableName = 'products'
 const attr = {
@@ -12,7 +12,7 @@ const attr = {
     allowNull: false,
   },
   price: {
-    type: DataTypes.DECIMAL(7,2),
+    type: DataTypes.DECIMAL(10,2),
     allowNull: false,
   },
   categories: {
@@ -22,11 +22,13 @@ const attr = {
   createdAt: {
     type: DataTypes.DATE,
     allowNull: false,
+    defaultValue: Sequelize.fn('now'),
     field: 'created_at'
   },
   updatedAt: {
     type: DataTypes.DATE,
     allowNull: false,
+    defaultValue: Sequelize.fn('now'),
     field: 'updated_at'
   },
   deletedAt: {

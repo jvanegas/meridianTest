@@ -10,6 +10,10 @@ function init(sequelize) {
         defaultValue: DataTypes.UUIDV4,
         primaryKey: true,
       },
+      discount: {
+        type: DataTypes.SMALLINT,
+        allowNull: false,
+      },
       code: {
         type: DataTypes.STRING(10),
         allowNull: false,
@@ -17,6 +21,7 @@ function init(sequelize) {
       expirationDate: {
         type: DataTypes.DATE,
         allowNull: false,
+        field: 'expiration_date',
       },
       createdAt: {
         type: DataTypes.DATE,

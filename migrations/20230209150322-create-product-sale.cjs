@@ -1,4 +1,4 @@
-const { DataTypes } = require("sequelize")
+const { DataTypes, Sequelize } = require("sequelize")
 
 const tableName = 'product_sales'
 const attr = {
@@ -32,11 +32,13 @@ const attr = {
   createdAt: {
     type: DataTypes.DATE,
     allowNull: false,
+    defaultValue: Sequelize.fn('now'),
     field: 'created_at',
   },
   updatedAt: {
     type: DataTypes.DATE,
     allowNull: false,
+    defaultValue: Sequelize.fn('now'),
     field: 'updated_at',
   },
   deletedAt: {

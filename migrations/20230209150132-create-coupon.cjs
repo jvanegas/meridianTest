@@ -1,4 +1,4 @@
-const { DataTypes } = require("sequelize")
+const { DataTypes, Sequelize } = require("sequelize")
 
 const tableName = 'coupons'
 const attr = {
@@ -7,6 +7,10 @@ const attr = {
     defaultValue: DataTypes.UUIDV4,
     primaryKey: true,
   },
+  discount: {
+    type: DataTypes.SMALLINT,
+    allowNull: false,
+  },
   code: {
     type: DataTypes.STRING(10),
     allowNull: false,
@@ -14,15 +18,18 @@ const attr = {
   expirationDate: {
     type: DataTypes.DATE,
     allowNull: false,
+    field: 'expiration_date'
   },
   createdAt: {
     type: DataTypes.DATE,
     allowNull: false,
+    defaultValue: Sequelize.fn('now'),
     field: 'created_at'
   },
   updatedAt: {
     type: DataTypes.DATE,
     allowNull: false,
+    defaultValue: Sequelize.fn('now'),
     field: 'updated_at'
   },
   deletedAt: {
