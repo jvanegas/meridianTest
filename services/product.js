@@ -1,9 +1,9 @@
-const getAll = (ProductsModel, Operators, filters = { category: '' }) => {
+const getAll = async (ProductsModel, Operators, filters = { category: '' }) => {
   const filter = {}
   if (filters.category !== '') {
     filter.categories = { [Operators.iLike]: `%${filters.category}%` }
   }
-  return ProductsModel.findAll({
+  return await ProductsModel.findAll({
     where: { ...filter },
   })
 }
