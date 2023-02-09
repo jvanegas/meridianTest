@@ -1,6 +1,7 @@
 import Fastify from 'fastify'
 import config from './config/index.js'
 import dbPlugin from './plugins/db.js'
+import routes from './routes/index.js'
 
 const main = async (configApp = {}) => {
   const app = Fastify(configApp)
@@ -11,6 +12,8 @@ const main = async (configApp = {}) => {
   app.get('/check', async () => {
     return { status: 'Ok' }
   })
+
+  app.register(routes)
 
   return app
 }

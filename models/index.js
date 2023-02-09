@@ -33,7 +33,7 @@ async function dbConnector(config) {
     }
   })
 
-  return sequelize
+  return { sequelize, Sequelize }
 }
 
 export { dbConnector }
