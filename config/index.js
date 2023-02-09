@@ -14,6 +14,7 @@ switch (environment) {
       host: process.env.DB_HOST ?? '127.0.0.1',
       dialect: process.env.DB_VENDOR ?? 'postgres',
       appPort: process.env.APP_PORT ?? 3000,
+      logger: false,
     }
     break
   case 'DEVELOPMENT':
@@ -25,6 +26,12 @@ switch (environment) {
       host: process.env.DB_HOST ?? '127.0.0.1',
       dialect: process.env.DB_VENDOR ?? 'postgres',
       appPort: process.env.APP_PORT ?? 3000,
+      logger: {
+        level: 'info',
+        transport: {
+          target: 'pino-pretty',
+        },
+      },
     }
     break
 }
