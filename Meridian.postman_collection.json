@@ -1,0 +1,261 @@
+{
+	"info": {
+		"_postman_id": "d9f5c472-b19f-4b46-b034-15436cad2ff4",
+		"name": "Meridian",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "115576"
+	},
+	"item": [
+		{
+			"name": "Get all products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/product?category=electro",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"product"
+					],
+					"query": [
+						{
+							"key": "category",
+							"value": "electro"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET product",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/product?category=electro",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"product"
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "electro"
+								}
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "content-length",
+							"value": "690"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 Feb 2023 18:11:10 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=72"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"4068ae18-a899-11ed-afa1-0242ac120002\",\n        \"name\": \"Cargador\",\n        \"price\": \"25000.00\",\n        \"categories\": \"electronica, celulares, computo, cargador\",\n        \"createdAt\": \"2023-02-09T16:59:39.299Z\",\n        \"updatedAt\": \"2023-02-09T16:59:39.299Z\",\n        \"deletedAt\": null\n    },\n    {\n        \"id\": \"4068b19c-a899-11ed-afa1-0242ac120002\",\n        \"name\": \"Computador\",\n        \"price\": \"4500000.00\",\n        \"categories\": \"electronica, computadores\",\n        \"createdAt\": \"2023-02-09T16:59:39.299Z\",\n        \"updatedAt\": \"2023-02-09T16:59:39.299Z\",\n        \"deletedAt\": null\n    },\n    {\n        \"id\": \"4068b534-a899-11ed-afa1-0242ac120002\",\n        \"name\": \"Airfryer\",\n        \"price\": \"450000.00\",\n        \"categories\": \"hogar, electonica, electrodomesticos\",\n        \"createdAt\": \"2023-02-09T16:59:39.299Z\",\n        \"updatedAt\": \"2023-02-09T16:59:39.299Z\",\n        \"deletedAt\": null\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Add item to user's cart",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"productId\": \"4068b534-a899-11ed-afa1-0242ac120002\",\n  \"quantity\": 2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/cart?user_id=4068a8dc-a899-11ed-afa1-0242ac120002",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"cart"
+					],
+					"query": [
+						{
+							"key": "user_id",
+							"value": "4068a8dc-a899-11ed-afa1-0242ac120002"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add item to cart of user",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"productId\": \"4068b534-a899-11ed-afa1-0242ac120002\",\n  \"quantity\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/cart?user_id=4068a8dc-a899-11ed-afa1-0242ac120002",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"cart"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "4068a8dc-a899-11ed-afa1-0242ac120002"
+								}
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "content-length",
+							"value": "252"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 Feb 2023 18:33:31 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=72"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"8973f013-3152-4741-bb62-05c95c594d7e\",\n    \"productId\": \"4068b534-a899-11ed-afa1-0242ac120002\",\n    \"quantity\": 2,\n    \"userId\": \"4068a8dc-a899-11ed-afa1-0242ac120002\",\n    \"updatedAt\": \"2023-02-09T18:33:30.979Z\",\n    \"createdAt\": \"2023-02-09T18:33:30.979Z\",\n    \"deletedAt\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "Get user's cart items",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/cart/user/:userId",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"cart",
+						"user",
+						":userId"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "4068a8dc-a899-11ed-afa1-0242ac120002"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get user's cart items",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/cart/user/:userId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"cart",
+								"user",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "4068a8dc-a899-11ed-afa1-0242ac120002"
+								}
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "content-length",
+							"value": "507"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 Feb 2023 18:51:00 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=72"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"4d74e93d-1e68-4539-a7cb-bae89db0e31e\",\n        \"userId\": \"4068a8dc-a899-11ed-afa1-0242ac120002\",\n        \"productId\": \"4068b534-a899-11ed-afa1-0242ac120002\",\n        \"quantity\": 2,\n        \"createdAt\": \"2023-02-09T18:32:20.420Z\",\n        \"updatedAt\": \"2023-02-09T18:32:20.420Z\",\n        \"deletedAt\": null\n    },\n    {\n        \"id\": \"8973f013-3152-4741-bb62-05c95c594d7e\",\n        \"userId\": \"4068a8dc-a899-11ed-afa1-0242ac120002\",\n        \"productId\": \"4068b534-a899-11ed-afa1-0242ac120002\",\n        \"quantity\": 2,\n        \"createdAt\": \"2023-02-09T18:33:30.979Z\",\n        \"updatedAt\": \"2023-02-09T18:33:30.979Z\",\n        \"deletedAt\": null\n    }\n]"
+				}
+			]
+		}
+	]
+}
